@@ -2,6 +2,10 @@
 
 
 <h1>showページ</h1>
+<%= link_to user_path(@book_show.user.id) do %>
+  <%= attachment_image_tag @user, :profile_image, :fill, 20, 20, format: 'jpeg', fallback: 'no_image.jpg' %> 
+  <%= @book_show.user.name %>
+<% end %>
 <%= @book_show.title %>
 <%= @book_show.body %>
 <% if @book_show.user.id == current_user.id %>
