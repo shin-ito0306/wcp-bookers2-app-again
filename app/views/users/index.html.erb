@@ -1,22 +1,10 @@
-<h1>User info</h1>
-
-  <%= attachment_image_tag @user, :profile_image, :fill, 20, 20, format: 'jpeg', fallback: 'no_image.jpg' %>
-  <%= @user.name %>
-  <%= @user.introduction %><br>
-  <%= link_to "edit", edit_user_path(current_user.id) %>
-
-
-<h1>New book</h1>
-<%= form_with model: @book, local:true do |f| %>
-  <%= f.label :title %><br>
-  <%= f.text_field :title %>
-  
-  <%= f.label :body %><br>
-  <%= f.text_field :body %>
-  
-  <%= f.submit "Create Book" %>
-  
+<% if @book.errors.any? %>
+  <%= @book.errors.full_messages.count %>件のerrorが発生しました。
+  <% @book.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+  <% end %>
 <% end %>
+<%= render 'books/sidebar', user: @user, book: @book %>
 
 <h1>users</h1>
 <% @users.each do |user| %>
