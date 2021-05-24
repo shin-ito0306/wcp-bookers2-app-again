@@ -17,3 +17,18 @@
  @import "bootstrap";
  @import "font-awesome-sprockets";
  @import "font-awesome";
+ 
+ 
+ * {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+ }
+ 
+ .navbar-dark .navbar-brand {
+  color: #fff;
+ }
+
+div .field {
+ margin-bottom: 10px;
+}
